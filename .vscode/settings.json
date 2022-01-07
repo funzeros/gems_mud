@@ -1,0 +1,27 @@
+{
+  "editor.fontSize": 16,
+  "editor.formatOnSave": true,
+  "editor.wordWrap": "on",
+  "editor.minimap.scale": 2,
+  "extensions.ignoreRecommendations": false,
+  "files.autoSaveDelay": 1000,
+  "files.eol": "\n",
+  "typescript.tsdk": "node_modules/typescript/lib",
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["javascript", "javascript", "json"],
+  "eslint.format.enable": true,
+  "eslint.alwaysShowStatus": false,
+  "eslint.probe": ["javascript", "typescript", "json"],
+  "git.autofetch": true,
+  "javascript.format.enable": false,
+  "javascript.validate.enable": true,
+  "typescript.format.enable": false,
+  "typescript.validate.enable": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
