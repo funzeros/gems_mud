@@ -25,7 +25,6 @@
       or
       npm run dev
       ```
-      >开发文件在`test`目录
   4. 项目打包
       ```bash
       pnpm build
@@ -34,7 +33,6 @@
       or
       npm run build
       ```
-      >打包文件在`dist`目录
   5. 提交代码
       ```bash
       pnpm mit
