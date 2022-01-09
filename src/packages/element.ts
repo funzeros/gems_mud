@@ -1,3 +1,15 @@
+export class GemsPageBuilder {
+  protected canvas: HTMLCanvasElement;
+  protected pen: CanvasRenderingContext2D;
+  constructor(canvas: HTMLCanvasElement) {
+    this.canvas = canvas;
+    this.pen = canvas.getContext('2d')!;
+  }
+  public render(delta: number) {
+    console.log(delta);
+  }
+}
+
 export class GemsCanvas extends HTMLElement {
   constructor() {
     super();
@@ -12,8 +24,14 @@ export class GemsCanvas extends HTMLElement {
     shadow.appendChild(template.content);
     GemsCanvas.getCanvasFn && GemsCanvas.getCanvasFn(canvas);
   }
+  private fitCanvas(canvas: HTMLCanvasElement) {
+    canvas.width = globalThis.innerWidth;
+    canvas.height = globalThis.innerHeight;
+  }
   private setCanvasStyle(canvas: HTMLCanvasElement, style: HTMLStyleElement) {
     canvas.classList.add('gems-game-canvas');
+    this.fitCanvas(canvas);
+    globalThis.addEventListener('resize', this.fitCanvas.bind(this, canvas));
     style.setAttribute('type', 'text/css');
     style.setAttribute('scoped', 'scoped');
 

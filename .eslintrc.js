@@ -17,7 +17,7 @@ module.exports = {
       'error',
       {
         require: {
-          FunctionDeclaration: true,
+          FunctionDeclaration: false,
           MethodDefinition: false,
           ClassDeclaration: false,
           ArrowFunctionExpression: false,

@@ -19,7 +19,7 @@
     "forceConsistentCasingInFileNames": true,
     "types": [],
     "rootDir": ".",
-    "typeRoots": ["./node_modules/@types", "./src/types"],
+    "typeRoots": ["./node_modules/@types", "./src/types", ".src/packages"],
     "paths": {
       "@/*": ["src/*"]
     }
