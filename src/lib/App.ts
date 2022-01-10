@@ -1,15 +1,18 @@
-import { GemsPageBuilder } from '@/packages';
+import { Color, GemsPageBuilder } from '@/packages';
 
 export default class AppPage extends GemsPageBuilder {
   constructor(canvas: HTMLCanvasElement) {
     super(canvas);
   }
   public render(delta: number) {
-    this.pen.fillStyle = '#000';
-    this.pen.fillRect(0, 0, this.canvas.width, this.canvas.height);
-    this.pen.fillStyle = '#fff';
-    this.pen.font = 'bold 30px Arial';
-    this.pen.textAlign = 'left';
-    this.pen.fillText(`${~~(1000 / delta)}FPS`, 5, 30);
+    this.rect([0, 0, this.width, this.height], { color: Color.black }).text(
+      `${~~(1000 / delta)}fps`,
+      [this.width, 16],
+      {
+        fontSize: 16,
+        color: Color.white,
+        textAlign: 'right',
+      },
+    );
   }
 }

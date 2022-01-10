@@ -31,9 +31,24 @@ export default class GemsEngine extends GemsRuntime {
       console.log(this._router);
     }
     this.startAnimate();
+    this._touchEventInit();
   }
   private _pageInit(pageInstance: GemsPageBuilder) {
     this.pushInstance(pageInstance);
+  }
+  private _touchEventInit() {
+    this._canvas?.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+    });
+    this._canvas?.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+    });
+    this._canvas?.addEventListener('touchend', (e) => {
+      e.preventDefault();
+    });
+    this._canvas?.addEventListener('touchcancel', (e) => {
+      e.preventDefault();
+    });
   }
   public use(plugin: GemsPlugin) {
     plugin.install(this);
